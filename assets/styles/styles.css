@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+.outer-block {
+    border: 5px solid blue;
+}
+
+.inner-block {
+    border: 5px solid red;
+    padding: 10px;
+    font-size: 2rem;
+}
+
+/* основна вісь по горизонталі - по замовчуванню */
+/* батьківському елементу задаємо параметр display flex */
+.flex-parent {
+display: flex;
+flex-direction: row;
+justify-content: space-between;  /*- jusify content = main axis (рухає елементи по горизонталі якщо в нас flex direction - row, або рухає по вертикалі якщо в нас flex direction - column)*/
+align-items: center; /*align items - cross axis - рухає елементи по вертикальній осі якщо в нас flex direction - row, і рухає по горизонталі якщо flex direction - column*/
+align-content: center; /*- рухає рядки а не окремі елементи як align-items*/
+align-self: center; /* - рухає один окремий елемент*/
+gap: 20px;  /*- задає рівномірні відстані між елементами*/
+flex-wrap: wrap; /*-переносить елементи на новий рядок, якщо вони не влазять в рядок */
+flex-flow: row wrap; /*- дозволяє коротко записати в одному параметрі два інших, а саме flex-flow = flex-direction + flex-wrap*/
+}
+
+.flex-child {
+
+}
+
+/* нехай останній елемент максимально відштовхнеться від перших трьох елементів зліва */
+.child4 {
+    margin-left: auto;
+}
