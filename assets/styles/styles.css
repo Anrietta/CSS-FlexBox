@@ -2,30 +2,45 @@
     box-sizing: border-box;
 }
 
-header {
-    background-color: aqua;
-    min-height: 100vh;
-    padding: 20px;
-    text-align: center;
+body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
-h1 {
-    font-size: 2rem;
+header,
+div,
+footer {
+    border: 2px solid yellow;
+}
+
+header,
+footer {
+    width: 100%;
+}
+
+div {
+    max-width: 100px;
+    width: 100%;
+    min-width: 320px;
+    display: flex;
 
 }
 
-p {
-    margin-top: 10px;
+nav {
+    width: 25%;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    border: 1px solid grey;
-    padding: 20px 20px;
-    margin-top: 15px;
+main {
+    width: 75%;
+}
+
+nav,
+main {
+    border: 1px solid green;
+}
+
+footer {
+    margin-top: auto;  /*перетягуємо футер в самий низ view porta*/
 }
