@@ -2,52 +2,34 @@
     box-sizing: border-box;
 }
 
-body {
+.parent {
+    border: 5px solid red;
+    min-height: 150px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+    /* flex-direction: column;
+    align-items: center; */
+    /* justify-content: space-between; */
+    /* align-items: flex-start;  рухіає всі елементи по поперечній осі, щоб рухати лише один елемент потрібно конкретно до того одного застосувати align-self */
 }
 
-header,
-div,
-footer {
-    border: 2px solid yellow;
+.child {
+    border: 5px solid green;
 }
 
-header,
-footer {
-    width: 100%;
+.child1 {
+    /* align-self: center;  рухає один елемент по поперечній осі */
+    /* order: 6; змінює порядок конкретного елемент */
 }
 
-div {
-    max-width: 100px;
-    width: 100%;
-    min-width: 320px;
-    display: flex;
-
+.child4 {
+    /* align-self: flex-end; */
 }
+/* .child1 {
+    align-self: flex-end;
+} */
 
-nav {
-    width: 25%;
-}
-
-main {
-    width: 75%;
-}
-
-nav,
-main {
-    border: 1px solid green;
-}
-
-footer {
-    margin-top: auto;  /*перетягуємо футер в самий низ view porta*/
-}
-
-/* розділюємо абзац на дві колонки не використовую flex */
-p {
-    margin: auto 20px;
-    /* column-count: 2;  через column-count вказавши кількість колонок */
-    column-width: 200px; /*через ширину колонки, тоді воно гарно адаптується*/
+.child2,
+.child4,
+.child6 {
+    order: 2;
 }
