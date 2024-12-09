@@ -2,58 +2,57 @@
     box-sizing: border-box;
 }
 
-.parent {
-    border: 5px solid red;
-    min-height: 150px;
+html {
+    --user-photo-size: 75px;
+}
+
+.users-list {
+    padding: 15px;
+}
+
+.user-list-item {
+    box-shadow: 0 0 5px grey;
+    padding: 10px;
+
     display: flex;
-    /* flex-wrap: wrap; */
-    gap: 10px;
-    /* flex-direction: column;
-    align-items: center; */
-    /* justify-content: space-between; */
-    /* align-items: flex-start;  рухіає всі елементи по поперечній осі, щоб рухати лише один елемент потрібно конкретно до того одного застосувати align-self */
+    align-items: center;
+    gap: 15px;
 }
 
-.child {
-    border: 5px solid green;
-    width: 200px;
-    flex-shrink: 1; 
-    /* align-self: center;  рухає один елемент по поперечній осі */
-    /* order: 6; змінює порядок конкретного елементу */
-    /* flex-shrink: 0 чи 1; дозволяє елементу зменшуватись при зменшенні view porta і не дозволяє збільшуватись при розширенні view porta (0 - не дозволено (по замовч), 1 - дозволено)*/
-    /* flex-grow: 0 чи 1; дозволяє елементу збільшуватись при збільшенні view porta і не дозволяє зменшуватись при звуженні view porta (0 - не дозволено (по замовч), 1 - дозволено)*/ 
-    /* flex-basis:300px; тут ширина трохи більша від ширини елемента, тому що flex-basis це саме та ширина починаючи з якої елементам дозволено чи не дозволено зменшуватись/збільшуватись (flex-shrink/flex-grow) */
-    /* flex: 0 1 auto; сукупний параметр flex-grow + flex-shrink + flex-basis */
-
-    /* як поводяться flex-shrink i flex-grow коли вони з 1 (включені) якщо дозволено wrap і задано ширину елемента */
-    /* вони почнуть зменшуватись лише тоді коли вже небуде куди перреноситись, тобто кожен елемент перенесеться в свій рядочок і місця для них стане замало */
+.user-img-wrapper {
+    width: 75px;
+    height: 75px;
+    border: 2px solid blue;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.child2 {
-    flex-shrink: 4;  /*від цього елемента відкушується найбільший кусочок з недостаючого простору - він буде найменший*/
-    
-    /*
-        flex-shrink - як відраховується в кого скільки відкусити ширини при різних значеннях параметра (при різних пропорціях)
-    1. маємо 3 елемента ширина кожного 300px
-        300px*3=900px
-    2. ширина нашого екрану лише 600px, тобто елементам не вистачає 300px
-        900px-600px=300px
-    3. ми задали для child1 i child3 flex-srink=1 а для child2 flex-shrink=4 - тобто пропорції у них різні
-    4. відповідно недостаючий простір 300px буде ділитись між цими трьома елементами відповідно до пропорцій які ми вказали, а саме:display: display:
-        300px - ширина якої не вистачає
-        6 - це 6 частин пропорцій 1+4+1
-        child1=1/6*300=50px - зменшиться на 50px
-        child2=4/6*300=200px - зменшиться на 200px
-        child3=1/6*300=50px - зменшиться на 50px
-
-        і так само працює з flex-grow, посто рахує скільки кому додати ширини відповідно до пропорцій
-    */
+.user-img-wrapper img {
+    width: var(--user-photo-size);
+    height: var(--user-photo-size);
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
-/* лінійний розмір вздовж головної вісі */
-/* (найменш пріоритетний) контент < width/height < flex-basis (найбільш пріоритетний) */
+.user-name {
+font-size: 18px;
+font-weight: 600;
+}
 
-.another-element {
-    border: 5px solid green;
-    width: 200px;
+.user-descr {
+font-size: 16px;
+color: grey;
+}
+
+.trash-btn {
+margin-left: auto;
+border: none;
+background-color: transparent;
+color: grey;
+font-size: 17px;
+}
+
+.trash-btn:hover {
+    cursor: pointer;
+    color: darkslategray;
 }
